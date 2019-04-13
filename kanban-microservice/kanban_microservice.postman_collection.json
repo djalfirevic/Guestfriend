@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "9a51d9f9-ba72-4c5b-bfe9-9293a7c991dc",
+		"name": "Kanban Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/users/1",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Bane\",\n\t\"email\": \"branko.m.antic@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://kanban-microservice/users",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Bane 111\",\n\t\"email\": \"bane111@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://kanban-microservice/users/11",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"users",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/users/10",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/users?query=a&order_by=email&sorting=asc&page=3&limit=3",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "a"
+								},
+								{
+									"key": "order_by",
+									"value": "email"
+								},
+								{
+									"key": "sorting",
+									"value": "asc"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/tickets/2",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"tickets",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"First Ticket\",\n\t\"description\": \"This is first ticket ...\",\n\t\"priority\": 3,\n\t\"user_id\": 1,\n\t\"lane_id\": 2\n}"
+						},
+						"url": {
+							"raw": "http://kanban-microservice/tickets",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Fir referf st Ticket\",\n\t\"description\": \"This erve is first ticket ...\",\n\t\"priority\": 4,\n\t\"user_id\": 3,\n\t\"lane_id\": 1\n}"
+						},
+						"url": {
+							"raw": "http://kanban-microservice/tickets/51",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"tickets",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234567890",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/tickets/4",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"tickets",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/tickets?query=a&filter[priority]=2&order_by=id&sorting=desc&page=2&limit=3",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "a"
+								},
+								{
+									"key": "filter[priority]",
+									"value": "2"
+								},
+								{
+									"key": "order_by",
+									"value": "id"
+								},
+								{
+									"key": "sorting",
+									"value": "desc"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "history",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://kanban-microservice/tickets/1/history",
+							"protocol": "http",
+							"host": [
+								"kanban-microservice"
+							],
+							"path": [
+								"tickets",
+								"1",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "root",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1234567890",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://kanban-microservice/",
+					"protocol": "http",
+					"host": [
+						"kanban-microservice"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
