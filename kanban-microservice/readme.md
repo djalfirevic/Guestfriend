@@ -6,7 +6,7 @@
 1 - Clone the repository on your local machine.
 
 ```shell
-$ git clone https://gitlab.com/branko.m.antic/kanban-microservice.git
+$ git clone https://github.com/djalfirevic/Guestfriend.git
 ```
 
 2 - Create an empty database.
